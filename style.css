@@ -1,26 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:ital@1&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-h1{
-    font-family: 'Potta One', cursive;
-    font-size: 3rem;
-}
-
-.menu{
-    height: 100vh;
+header {
     display: flex;
-    flex-flow: column;
-    text-align: center;
-    background-color: gray;
 }
-
-a {
-    font-family: 'Roboto';
-    text-decoration: none;
-    font-size: 1.5rem;
-    color: #f3f3f3;
+header > p {
+    border: solid black;
+    flex-basis: 100%;
 }

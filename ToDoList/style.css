@@ -1,0 +1,24 @@
+html, body{
+    width:50%;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    width: 360px;
+}
+
+#inputField{
+    width: 100px;
+    height: 40px;
+    border: 1px solid black;
+    outline: none;
+    font-size: 25px;
+    vertical-align: middle;
+}
+#addToDo{
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    vertical-align: middle;
+    font-size: 30px;
+}

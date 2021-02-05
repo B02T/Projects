@@ -22,3 +22,7 @@ html, body{
     vertical-align: middle;
     font-size: 30px;
 }
+.paragraph-styling{
+    margin: 0;
+    cursor: pointer;
+}

@@ -3,44 +3,32 @@
 //  /** @type {WebGLRenderingContext} */
  /** @type {HTMLCanvasElement} */
 
+
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
-canvas.width = innerWidth;
-canvas.height = innerHeight;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-window.addEventListener('resize', function(){
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    a.build()
 });
 
-const mouse = {
-    x:undefined,
-    y:undefined
-};
-
-function randomNumber(){
-    return Math.floor(Math.random * 100);
-}
-
-function randomColor(){
-    const arr = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += arr[Math.floor(Math.random() * 16)];    
+class Rect{
+    constructor(){
+        this.posx = 0;
+        this.posy = 0;
+        this.width = 100;
+        this.height = 100;
     }
-    return color;
+
+    build(){
+        ctx.fillStyle = "red";
+        ctx.fillRect(this.posx, this.posy, this.width, this.height);
+    }
 }
 
-function createCitcle(){
-    ctx.fillStyle=randomColor();
-    ctx.beginPath();
-    ctx.arc(mouse.x,mouse.y,10,0,Math.PI * 2);
-    ctx.fill();
-}
-
-canvas.addEventListener('mousemove', function(e){
-    mouse.x = e.x;
-    mouse.y = e.y;
-    createCitcle();
-});
-
+const a = new Rect();
+a.build()
+console.log(a);

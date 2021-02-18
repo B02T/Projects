@@ -1,9 +1,14 @@
 const http = require('http');
-const data = require('./products/products.json');
-
-const port = process.env.PORT || 5000;
+const port = process.env.port || 5000;
+const products = require('./products/products.json');
 const server = http.createServer((req, res) => {
-    res.writeHead(200, {'Content-Type': 'application/json'});
-    res.write(JSON.stringify(products));
+    const method = req.method;
+    const url = req.url;
+    if (method === 'GET' && url === '/api/products') {
+        res.writeHead(200, {'Content-Type' :'application/json'});
+        res.end(JSON.stringify(products));
+    }
+    res.writeHead(404, {'Content-Type' :'application/json'});
+    res.end(JSON.stringify({message: 'Route not found'}));
 });
-server.listen(port, () => {`Server running on port ${port}`});
+server.listen(port, () => {console.log(`Server running on ${port}.`);});
